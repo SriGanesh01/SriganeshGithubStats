@@ -1,4 +1,3 @@
-// src/components/HeroHome.jsx
 import React, { useState, useEffect } from 'react';
 
 const HeroHome = () => {
@@ -29,16 +28,11 @@ const HeroHome = () => {
 			});
 	}, []);
 
-	if (loading) {
-		return <div>Loading...</div>;
-	}
-
-	if (error) {
-		return <div>Error fetching data: {error.message}</div>;
-	}
+	if (loading) return <div>Loading...</div>;
+	if (error) return <div>Error fetching data: {error.message}</div>;
 
 	return (
-		<div className="w-[500px] h-6">
+		<div className="w-[500px] h-6" id="hero-home">
 			<h1>GitHub Repositories</h1>
 			<ul>
 				{repos.map((repo) => (
